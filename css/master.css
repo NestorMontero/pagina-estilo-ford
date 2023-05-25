@@ -1,0 +1,446 @@
+/*master - style - styles -estilos - index - main -app*/
+/*=== Selector Universal ===*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*=== Comportamiento Global ===*/
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 100%;
+    /* medida relativa */
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*=== Aplicando CSS a la sección imagen ===*/
+.imagen {
+    display: none;
+}
+
+/* encabezado */
+#encabezado {
+    text-align: center;
+    padding: 10px;
+}
+
+#logo {
+    width: 90%;
+    padding-left: 30px;
+}
+
+ul#opciones-izq li,
+ul#opciones-der li {
+    font-size: 1.2rem;
+    padding: 4px;
+
+}
+
+ul#opciones-izq li a,
+ul#opciones-der li a {
+    color: white;
+}
+
+ul#opciones-izq li a:hover,
+ul#opciones-der li a:hover {
+    color: rgb(158, 141, 253);
+    transition: .7s;
+}
+
+#menu {
+    background-color: #00095B;
+}
+
+/* estilos del titulo */
+.titulo {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+/* estilos de la seccion de productos */
+#productos {
+    text-align: center;
+}
+
+.producto {
+    padding: 20px;
+    border: 2px double #00095B;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px inset #00095B;
+}
+
+article.producto a {
+    display: inline-block;
+    color: white;
+    background-color: #00095B;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+article.producto a:hover {
+    color: #00095B;
+    background-color: rgb(158, 141, 253);
+    transition: .5s;
+}
+
+.imagen-descuento {
+    width: 12%;
+    position: absolute;
+}
+
+/* estilos de la seccion galeria */
+section#galeria article {
+    padding: 10px;
+}
+
+section#galeria article img {
+    border-radius: 10px;
+}
+
+/* estilos al formulario */
+#form-contacto {
+    align-items: center;
+}
+
+#formulario {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+}
+
+#formulario input {
+    border: none;
+    border-bottom: solid 1px #00095B;
+    font-size: 1.1rem;
+    width: 300px;
+}
+
+input:focus {
+    outline: none;
+    color: blue;
+    padding: 10px;
+}
+
+#registro {
+    border: none;
+    color: white;
+    background-color: #00095B;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+#registro:hover {
+    color: #00095B;
+    background-color: rgb(158, 141, 253);
+    transition: .5s;
+}
+
+#pais {
+    width: 200px;
+    height: 30px;
+}
+
+/* estilos al footer con grid*/
+#piePagina {
+    display: grid;
+    grid-template-rows: auto;
+    background-color: #00095B;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+ul#opciones-footer li a,
+ul#sociales li a {
+    color: white;
+}
+
+ul#sociales li{
+    padding: 5px;
+}
+
+/* estilos del boton fijo */
+#btn-subir {
+    display: none;
+}
+
+
+
+/*=== Trabajando con las media queries ===*/
+@media(min-width:768px) {
+
+    /* estilos del encabezado con grid */
+    #encabezado {
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        padding: 10px;
+        align-items: center;
+        position: fixed;
+        z-index: 1000;
+        background-color: white;
+    }
+
+    #menu {
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        background-color: white;
+    }
+
+    ul#opciones-izq li a,
+    ul#opciones-der li a {
+        color: #00095B;
+    }
+
+    #menuIzquierdo {
+        width: 70%;
+    }
+
+    #opciones-izq {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        font-size: 1.2rem;
+    }
+
+    #menuDerecho {
+        width: 20%;
+    }
+
+    #opciones-der {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 1.2rem;
+    }
+
+    ul#opciones-izq li a:hover,
+    ul#opciones-der li a:hover {
+        color: rgb(158, 141, 253);
+        transition: .7s;
+    }
+
+    /*=== Aplicando CSS a la sección imagen ===*/
+    .imagen {
+        display: block;
+        /* rutas: relativas - absolutas */
+        /* ruta absoluta */
+        /* background-image: url('https://cdn.pixabay.com/photo/2016/08/30/11/47/beverly-hills-1630448_960_720.jpg'); */
+        /* ruta relativa */
+        /*background-image: url('../img/banner.jpg');
+        height: 550px;
+        /*background-repeat: no-repeat;
+        background-size: contain;*/
+    }
+
+    #imagen{
+        padding-top: 50px;
+    }
+
+    /* estilos de los titulos */
+    .titulo {
+        text-align: center;
+        font-size: 3rem;
+        padding: 10px 0px 10px 0px;
+    }
+
+    /* estilos a la seccion de productos */
+    #productos {
+        display: flex;
+        text-align: center;
+        position: relative;
+    }
+
+    .producto {
+        padding: 20px;
+        border: 2px double #00095B;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px inset #00095B;
+    }
+
+    article.producto a {
+        display: inline-block;
+        color: white;
+        background-color: #00095B;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+
+    article.producto a:hover {
+        color: #00095B;
+        background-color: rgb(158, 141, 253);
+        transition: .5s;
+    }
+
+    .imagen-descuento {
+        width: 6%;
+        position: absolute;
+    }
+
+    /* estilos a la secion mensaje */
+    /*#mensaje {
+        /*background-image: url('../img/tablero-publicidad.jpg');
+        height: 600px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-attachment: fixed;
+    }*/
+
+    /* estilos a la seccion galeria */
+    #galeria {
+        display: grid;
+        /*grid-template-columns: repeat(4,1fr);*/
+        /*grid-template-columns: 1fr 2fr 1fr 3fr;*/
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+    }
+
+    section#galeria article img {
+        border-radius: 10px;
+    }
+
+    .efectoGaleria:hover {
+        transition: 0.7s;
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+
+    /* estilos al formulario */
+    #form-contacto {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    #formulario {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3rem;
+    }
+
+    #formulario input {
+        border: none;
+        border-bottom: solid 1px #00095B;
+        font-size: 1.1rem;
+        width: 300px;
+    }
+
+    input:focus {
+        outline: none;
+        color: blue;
+        padding: 10px;
+    }
+
+    #registro {
+        border: none;
+        color: white;
+        background-color: #00095B;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+
+    #registro:hover {
+        color: #00095B;
+        background-color: rgb(158, 141, 253);
+        transition: .5s;
+    }
+
+    #pais {
+        width: 200px;
+        height: 30px;
+    }
+
+    /* estilos al footer con grid*/
+    #piePagina {
+        display: grid;
+        grid-template-rows: auto;
+        background-color: #00095B;
+        color: white;
+        padding: 10px;
+    }
+
+    #menu-footer {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        align-items: center;
+    }
+
+    #opciones-footer {
+        padding-bottom: 15px;
+    }
+
+    .mapa {
+        text-align: center;
+    }
+
+    #sociales {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-right: 30px;
+    }
+
+    ul#sociales li,
+    ul#opciones-footer li {
+        margin-top: 8px;
+    }
+
+    ul#opciones-footer li {
+        /*list-style-image: url('../img/star-solid.svg');*/
+        background-image: url('../img/star-solid.svg');
+        background-repeat: no-repeat;
+        padding-left: 25px;
+    }
+
+    ul#opciones-footer li a,
+    ul#sociales li a {
+        color: white;
+    }
+
+    #derechos {
+        clear: both;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+        color: #00095B;
+        padding: 5px;
+    }
+
+    /* estilos del boton fijo */
+    #btn-subir {
+        display: block;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        right: 20px;
+        bottom: 30px;
+        z-index: 1000;
+    }
+}
+
+@media(min-width:992px) {
+
+    /* estilos de la seccion galeria con grid */
+    #galeria {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
